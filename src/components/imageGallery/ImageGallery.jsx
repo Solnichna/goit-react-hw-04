@@ -1,20 +1,14 @@
 import ImageCard from "./imageCard/ImageCard";
 
-const ImageGallery = ({ images, openModal }) => {
+const ImageGallery = ({images, openModal}) => {
   return (
-    <ul>
-      {images.map((image, index) => (
-        <li key={index}>
-          <div onClick={() => openModal(image.url)}>
-            <img 
-              src={image.url} 
-              alt={image.alt} 
-              onClick={() => openModal(image.url)} // Hier hinzugefügt
-            />
-            <ImageCard src={image.urls.small} alt={image.alt_description} />
-          </div>
-        </li>
-      ))}
+    <ul className="image-gallery">
+      {images.length > 0 &&
+        images.map((image) => (
+          <li key={image.id} className="image-gallery-item">
+            <ImageCard src={image.urls.small} alt={image.alt_description} openModal={openModal} />
+          </li>
+        ))}
     </ul>
   );
 };
