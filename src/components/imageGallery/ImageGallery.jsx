@@ -1,6 +1,6 @@
-import { ImageCard } from "./imageCard/ImageCard";
+import ImageCard from "./imageCard/ImageCard";
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({images}) => {
   return (
     <ul className="image-gallery">
       {images.length > 0 &&
