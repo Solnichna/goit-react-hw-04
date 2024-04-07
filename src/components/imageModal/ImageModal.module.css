@@ -1,15 +1,14 @@
-/* Stil für das Modalfenster */
+
 .react-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparenter Hintergrund */
-    z-index: 1000; /* Z-Index, um das Modalfenster über allem anderen zu positionieren */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000; 
   }
   
-  /* Stil für den Modalinhalt */
   .react-modal-content {
     position: absolute;
     top: 50%;
@@ -18,18 +17,16 @@
     background-color: white;
     padding: 20px;
     border-radius: 5px;
-    max-width: 80%; /* Maximale Breite des Modalfensters */
+    max-width: 80%;
   }
   
-  /* Stil für das Bild innerhalb des Modalfensters */
   .image-modal-content img {
-    max-width: 100%; /* Bildgröße anpassen */
-    height: auto; /* Automatische Höhe */
-    display: block; /* Bild in der Mitte zentrieren */
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
     margin: 0 auto;
   }
   
-  /* Stil für den Schließen-Button */
   .image-modal-content button {
     position: absolute;
     top: 10px;
@@ -41,5 +38,4 @@
     color: #333;
   }
   
-  /* Bei Bedarf können Sie weitere Anpassungen vornehmen */
   

@@ -1,10 +1,11 @@
-@import url("../components/searchBar/SearchBar.module.css");
-@import url("../components/imageGallery/ImageGallery.module.css");
 @import url("../components/errorMessage/ErrorMessage.module.css");
+@import url("../components/imageGallery/ImageGallery.module.css");
+@import url("../components/imageModal/ImageModal.module.css");
 @import url("../components/loadMoreBtn/LoadMoreBtn.module.css");
+@import url("../components/searchBar/SearchBar.module.css");
 
 body {
-  background-color: rgb(135, 243, 176);
+  background-color: rgb(243, 175, 135);
 }
 
 li {
