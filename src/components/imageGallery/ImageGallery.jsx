@@ -6,7 +6,11 @@ const ImageGallery = ({ images, openModal }) => {
       {images.map((image, index) => (
         <li key={index}>
           <div onClick={() => openModal(image.url)}>
-            <img src={image.url} alt={image.alt} />
+            <img 
+              src={image.url} 
+              alt={image.alt} 
+              onClick={() => openModal(image.url)} // Hier hinzugefügt
+            />
             <ImageCard src={image.urls.small} alt={image.alt_description} />
           </div>
         </li>
