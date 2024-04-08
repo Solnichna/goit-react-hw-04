@@ -8,12 +8,12 @@
     margin-bottom: 25px;
     border: 2px solid rgb(243, 207, 135);
     border-radius: 30px;
-    color: #fff;
-    background-color: brown;
+    color: rgb(34, 27, 27);
+    background-color: rgb(243, 207, 135);
     font-weight: 600;
   }
   .load-more-btn:hover {
-    border: 2px solid #fff;
-    color: brown;
-    background-color: rgb(243, 207, 135);
+    border: 2px solid rgb(243, 207, 135);
+    color: #f5e7e7;
+    background-color: rgb(35, 21, 167);
   }
