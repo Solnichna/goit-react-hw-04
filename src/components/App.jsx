@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./App.module.css";
 
 import { fetchImages } from "../components/api.js";
@@ -18,11 +18,16 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImages, setSelectedImages] = useState(null);
 
+  useEffect(() => {
+    if (searchInput !== "") {
+      load(searchInput);
+    }
+  }, [searchInput]); // Запускати завантаження при зміні searchInput
+
   const load = async (searchInput) => {
     try {
       setImages([]);
       setLoading(true);
-      setSearchInput(searchInput);
       const resData = await fetchImages(searchInput);
       setImages(resData);
       onSearchSuccess(resData.length > 0);
@@ -33,7 +38,7 @@ function App() {
     }
   };
 
-  const HandleLoadMore = async () => {
+  const handleLoadMore = async () => {
     try {
       setLoading(true);
       const nextPage = Math.ceil(images.length / 10) + 1;
@@ -50,6 +55,10 @@ function App() {
     setLoadMoreBtn(hasResults);
   };
 
+  const handleSearchSubmit = (searchInput) => {
+    setSearchInput(searchInput);
+  };
+
   const handleOpen = async (image) => {
     setSelectedImages(image);
     setIsOpen(true);
@@ -62,11 +71,11 @@ function App() {
   return (
     <>
       <div>
-        <SearchBar onSearch={load} onSearchSuccess={onSearchSuccess} />
+        <SearchBar onSearch={handleSearchSubmit} />
         {loading && <Loading />}
         {isError && <Error />}
         <ImageGallery images={images} openModal={handleOpen} />
-        {loadMoreBtn && <LoadMoreBtn HandleClick={HandleLoadMore} />}
+        {loadMoreBtn && <LoadMoreBtn HandleClick={handleLoadMore} />}
         {selectedImages && (
           <ImageModal
             isOpen={isOpen}
