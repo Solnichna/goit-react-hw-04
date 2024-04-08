@@ -1,14 +1,23 @@
-import ImageCard from "./imageCard/ImageCard";
+import ImageCard from "../imageCard/ImageCard";
 
-const ImageGallery = ({images, openModal}) => {
+const ImageGallery = ({ images, openModal }) => {
+  const handleClick = (imageUrl) => {
+    openModal(imageUrl);
+  };
+
   return (
-    <ul className="image-gallery">
-      {images.length > 0 &&
-        images.map((image) => (
-          <li key={image.id} className="image-gallery-item">
-            <ImageCard src={image.urls.small} alt={image.alt_description} openModal={openModal} />
-          </li>
-        ))}
+    <ul>
+      {images.map((image, index) => (
+        <li key={index}>
+          <div onClick={() => handleClick(image.url)}>
+            <img 
+              src={image.url} 
+              alt={image.alt} 
+            />
+            <ImageCard src={image.urls.small} alt={image.alt_description} />
+          </div>
+        </li>
+      ))}
     </ul>
   );
 };

@@ -1,7 +1,7 @@
 const ImageCard = ({ alt, src, openModal }) => {
   return (
     <div>
-      <img onClick={()=>openModal(src)} src={src} alt={alt} width="100%" height="100%" />
+      <img onClick={()=>openModal(src)} src={src} alt={alt} width="300" height="100%" />
     </div>
   );
 };
