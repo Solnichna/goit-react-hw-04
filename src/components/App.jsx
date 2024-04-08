@@ -22,7 +22,7 @@ function App() {
     if (searchInput !== "") {
       load(searchInput);
     }
-  }, [searchInput]); // Запускати завантаження при зміні searchInput
+  }, [searchInput]); 
 
   const load = async (searchInput) => {
     try {
