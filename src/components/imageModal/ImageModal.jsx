@@ -1,16 +1,16 @@
 
 import Modal from "react-modal";
 
-const ImageModal = ({ isOpen, onRequestClose, image }) => {
-  if (!isOpen) return null;
-
+const ImageModal = ({ isOpen, onRequestClose, imageUrl }) => {
   return (
-    <div className="modal-overlay" onClick={onRequestClose}>
-      <div className="modal-content">
-        <img src={image.url} alt={image.alt} />
-        <button onClick={onRequestClose}>Close</button>
-      </div>
-    </div>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      contentLabel="Image Modal"
+    >
+      <button onClick={onRequestClose}>Close</button>
+      <img src={imageUrl} alt="Modal Image" />
+    </Modal>
   );
 };
 
